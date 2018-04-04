@@ -1,0 +1,282 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-title {
+  font-size: 1.5em;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+body{
+	margin: 0;
+	padding: 0;
+	background: #fff;
+	color: #fff;
+	font-family: Arial;
+	font-size: 12px;
+}
+.defaultAlign{
+	margin: 0;
+	padding: 0 !important;
+  }
+.lft{float: left;}
+.padding-l-5{padding-left: 5px;}
+.padding-l-10{padding-left: 5px;}
+.padding-l-15{padding-left: 5px;}
+.padding-l-5{padding-left: 5px;}
+.margin-l-5{margin-left: 5px;}
+.loginMain {
+  margin:0 auto;
+  max-width:500px;
+  margin-top: 200px;
+  
+}
+.body{
+	position: absolute;
+	top: -20px;
+	left: -20px;
+	right: -40px;
+	bottom: -40px;
+	width: auto;
+	height: auto;
+	background-image: url(http://ginva.com/wp-content/uploads/2012/07/city-skyline-wallpapers-008.jpg);
+	background-size: cover;
+	-webkit-filter: blur(5px);
+	z-index: 0;
+}
+.header div{
+	float: left;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 35px;
+  font-weight: 200;
+  margin-top: 0;
+}
+
+.header div span{
+	color: #5379fa !important;
+}
+
+.login{
+	height: 150px;
+	width: 350px;
+	padding: 10px;
+  z-index: 2;
+  float: left;
+}
+
+.login input[type=text]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+}
+
+.login input[type=password]{
+	width: 250px;
+	height: 30px;
+	background: transparent;
+	border: 1px solid rgba(255,255,255,0.6);
+	border-radius: 2px;
+	color: #fff;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 4px;
+	margin-top: 10px;
+}
+
+.login input[type=button]{
+	width: 250px;
+	height: 35px;
+	background: #fff;
+	border: 1px solid #fff;
+	cursor: pointer;
+	border-radius: 2px;
+	color: #a18d6c;
+	font-family: 'Exo', sans-serif;
+	font-size: 16px;
+	font-weight: 400;
+	padding: 6px;
+	margin-top: 10px;
+}
+
+.login input[type=button]:hover{
+	opacity: 0.8;
+}
+
+.login input[type=button]:active{
+	opacity: 0.6;
+}
+
+.login input[type=text]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=password]:focus{
+	outline: none;
+	border: 1px solid rgba(255,255,255,0.9);
+}
+
+.login input[type=button]:focus{
+	outline: none;
+}
+
+::-webkit-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder{
+   color: rgba(255,255,255,0.6);
+}
+.sell{
+	width: 500px;
+}
+.popupsetting{
+	padding: 0px !important;
+}
+.Modal-modal-0-1-3{
+	padding: 0px !important;
+}
+.bluebox{
+	padding: 7px 0px 9px 15px;
+	color: #fff;
+	border-radius: 2px 2px 0 0;
+	background-color: #0062cc;
+}
+
+.orangebox{
+	padding:7px 0px 9px 15px;
+    color: #fff;
+	border-radius: 2px 2px 0 0;
+	background-color: rgb(244, 67, 54);
+}
+.orangebox p{
+	font-size: 10px;
+}
+.input-label{
+	color: #8c8c8c;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-left: 5px;
+}
+.sell input[type=number]{
+border: none;
+    border-bottom: 1px solid #ddd;
+	border-radius: 0;
+	height: 25px;
+	box-shadow: none;
+	box-sizing: border-box;
+	font-size: 10px;
+	padding: 5px;
+}
+.form_group{
+	padding: 10px;
+}
+.primarybtn{
+	width: 100px;
+	height: 30px;
+	font-size: 10px !important;
+	color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    padding: 5px 10px !important;
+    border-radius: 0 !important;
+}
+
+/* .container{
+	background: #fff;
+	margin: 60px auto 40px;
+	padding: 40px;
+	box-shadow: 0 0 40px #e3e3e3;
+	border-radius: 5px;
+	transform-origin: 0 0;
+	animation: swing-in .15s;
+	width: 360px;
+}   
+.header{
+	width: 100%;
+    display: block;
+    margin-bottom: 30px;
+}
+.link, a {
+    color: #4184f3;
+    text-decoration: none;
+	border-bottom: none;
+}
+.su-input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+.su-input-group .su-input-label {
+    display: block;
+    visibility: hidden;
+}
+.su-input-group input {
+    border: 0;
+    border-bottom: 1px solid #e3e3e3 !important;
+    padding: 6px 0;
+    color: #4a4a4a;
+	width: 100%;
+}
+.login-form .actions {
+    margin-top: 30px;
+}
+.button-orange wide{
+	color: #fff;
+	background: #ff5722;
+	border-color: #ff5722;
+}
+.text-light {
+    color: #9b9b9b;
+} */
+.buysellbtn{
+	font-size: 11px;
+    padding: 4px 12px;
+   
+    border: none;
+    color: white;
+    font-weight: bold;
+}
+.text-center {
+    text-align: center;
+}
+.bluecolor{
+	background: #007bff;
+} 
+.orangecolor{
+	background: rgb(244, 67, 54);
+}   
+.orangebtn{
+	
+	background-color: rgb(244, 67, 54) !important;
+	border: 1px solid rgb(244, 67, 54) !important;
+  
+}
