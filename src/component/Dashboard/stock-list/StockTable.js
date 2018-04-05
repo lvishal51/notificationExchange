@@ -37,8 +37,8 @@ class Stocktable extends Component {
           <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
           <TableHeaderColumn dataField='stockprize'>Price</TableHeaderColumn>
           <TableHeaderColumn dataField='chart'> Chart</TableHeaderColumn>
-          <TableHeaderColumn dataField='' dataFormat={this.cellButtonForBuy}>Buy</TableHeaderColumn>
-          <TableHeaderColumn dataField='' dataFormat={this.cellButtonForSell}>Sell</TableHeaderColumn>
+          <TableHeaderColumn dataField=''dataAlign="center" dataFormat={this.cellButtonForBuy}>Buy</TableHeaderColumn>
+          <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForSell}>Sell</TableHeaderColumn>
         </BootstrapTable>
         
         <InputModal modalIsOpen={this.state.isOpenModal} compName={this.state.compName} 
