@@ -8,6 +8,7 @@ import './App.css';
 import '../node_modules/react-bootstrap-table/dist/react-bootstrap-table-all.min.css';
 import 'bootstrap/dist/css/bootstrap.css';
 
+
 class App extends Component {
   render() {
     return (

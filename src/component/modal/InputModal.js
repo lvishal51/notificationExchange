@@ -27,7 +27,7 @@ class InputModal extends Component {
     const { open } = this.state;
     let data = this.state.compName === "Sell" ? 
     <Sell data={this.state.data} handleCloseModal={this.props.handleCloseModal}/>:    
-    <Buy data={this.state.data} handleCloseModal={this.props.handleCloseModal}/>;
+    <Buy data={this.state.data} handleCloseModal={this.props.handleCloseModal} handleBuy={this.props.handleBuy}/>;
     return (
       <div>          
         <Modal

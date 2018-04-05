@@ -9,7 +9,6 @@ class Stocktable extends Component {
     super(props);
     this.state = {
       isOpenModal: false,
-      data:this.props.data,
       selectedCandidate:{}
     };
     this.cellButtonForBuy = this.cellButtonForBuy.bind(this);
@@ -31,7 +30,8 @@ class Stocktable extends Component {
   render() {
 
     return (
-      <div>
+      <div>        
+        <h3>Stock Market List</h3>
         <BootstrapTable data={this.props.data} striped={true}hover={true}search searchPlaceholder="Search" version='4' pagination>
           <TableHeaderColumn isKey dataField='id'>ID</TableHeaderColumn>
           <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
@@ -42,7 +42,7 @@ class Stocktable extends Component {
         </BootstrapTable>
         
         <InputModal modalIsOpen={this.state.isOpenModal} compName={this.state.compName} 
-        data={this.state.selectedCandidate} handleCloseModal={this.handleCloseModal.bind(this)}        
+        data={this.state.selectedCandidate} handleBuy={this.props.handleBuy} handleCloseModal={this.handleCloseModal.bind(this)}        
         />     
       </div>
     );
