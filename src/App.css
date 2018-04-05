@@ -274,9 +274,45 @@ border: none;
 .orangecolor{
 	background: rgb(244, 67, 54);
 }   
-.orangebtn{
-	
+.orangebtn{	
 	background-color: rgb(244, 67, 54) !important;
-	border: 1px solid rgb(244, 67, 54) !important;
-  
+	border: 1px solid rgb(244, 67, 54) !important;  
+}
+.userinfo{
+	margin-bottom: 30px;
+	color: #444;
+}
+.userinfo p{
+font-size: 20px;
+}
+.nickname{
+	font-size: 30px;
+    
+}
+.bottomborder{
+	border-bottom: 1px solid #f1f1f1;
+	margin: 15px 0;
+	clear: both;
+}
+.equity{	
+	float: left;
+	margin-bottom:20px;
+}
+.equity-left-panel{
+	font-size: 25px;
+	border-right: 1px solid #f1f1f1;
+	width: 100%;
+}
+.equity-right-panel{
+	margin-top: 15px;
+}
+.equity-left-panel p{
+	font-size: 30px;
+	margin: 0;
+}	
+.equity-left-panel h3{
+	font-size: 9px;
+}
+.equity-right-panel p{
+	font-size: 9px;
 }

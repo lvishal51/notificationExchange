@@ -38,10 +38,8 @@ class LineChart extends React.Component {
                 x: {
                   type: 'timeseries',
                   tick: {
-                    format: function(x) {
-            
-                        return x.toLocaleDateString();
-                      
+                    format: function(x) {            
+                        return x.toLocaleDateString();                      
                     }
                   }
                 }
