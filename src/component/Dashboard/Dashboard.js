@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import Chart from '../charts/Charts';
-import Userinfo from '../Dashboard/Userinfo';
+//import Userinfo from '../Dashboard/Userinfo';
 import PhaseOne from '../Dashboard/stock-list/PhaseOne';
 import Stocktable from '../Dashboard/stock-list/StockTable';
 import PhaseTwo from '../Dashboard/stock-list/PhaseTwo';
@@ -82,9 +82,9 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          {/* <div>
+           <div>
             <Chart />
-          </div> */}
+          </div>
           <div>
             <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
           </div>
