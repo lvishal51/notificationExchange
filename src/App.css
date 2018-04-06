@@ -169,14 +169,14 @@ body{
 	padding: 7px 0px 9px 15px;
 	color: #fff;
 	border-radius: 2px 2px 0 0;
-	background-color: #0062cc;
+	background-color: #89c2ff;
 }
 
 .orangebox{
 	padding:7px 0px 9px 15px;
     color: #fff;
 	border-radius: 2px 2px 0 0;
-	background-color: rgb(244, 67, 54);
+	background-color: #f77b72;
 }
 .orangebox p{
 	font-size: 10px;
@@ -205,58 +205,12 @@ border: none;
 	height: 30px;
 	font-size: 10px !important;
 	color: #fff;
-    background-color: #0069d9;
-    border-color: #0062cc;
+    background-color: #89c2ff;
+    border-color: #89c2ff;
     padding: 5px 10px !important;
     border-radius: 0 !important;
 }
 
-/* .container{
-	background: #fff;
-	margin: 60px auto 40px;
-	padding: 40px;
-	box-shadow: 0 0 40px #e3e3e3;
-	border-radius: 5px;
-	transform-origin: 0 0;
-	animation: swing-in .15s;
-	width: 360px;
-}   
-.header{
-	width: 100%;
-    display: block;
-    margin-bottom: 30px;
-}
-.link, a {
-    color: #4184f3;
-    text-decoration: none;
-	border-bottom: none;
-}
-.su-input-group {
-    position: relative;
-    margin-bottom: 15px;
-}
-.su-input-group .su-input-label {
-    display: block;
-    visibility: hidden;
-}
-.su-input-group input {
-    border: 0;
-    border-bottom: 1px solid #e3e3e3 !important;
-    padding: 6px 0;
-    color: #4a4a4a;
-	width: 100%;
-}
-.login-form .actions {
-    margin-top: 30px;
-}
-.button-orange wide{
-	color: #fff;
-	background: #ff5722;
-	border-color: #ff5722;
-}
-.text-light {
-    color: #9b9b9b;
-} */
 .buysellbtn{
 	font-size: 11px;
     padding: 4px 12px;
@@ -269,14 +223,54 @@ border: none;
     text-align: center;
 }
 .bluecolor{
-	background: #007bff;
+	background: #89c2ff;
 } 
 .orangecolor{
-	background: rgb(244, 67, 54);
+	background: #f77b72;
 }   
-.orangebtn{
-	
-	background-color: rgb(244, 67, 54) !important;
-	border: 1px solid rgb(244, 67, 54) !important;
-  
+.orangebtn{	
+	background-color: #f77b72 !important;
+	border: 1px solid #f77b72 !important;  
+}
+.bluebtn{
+	background-color: #89c2ff !important;
+	border: 1px solid #89c2ff !important;  
+}
+.userinfo{
+	margin-bottom: 30px;
+	color: #444;
+}
+.userinfo p{
+font-size: 20px;
+}
+.nickname{
+	font-size: 30px;
+    
+}
+.bottomborder{
+	border-bottom: 1px solid #f1f1f1;
+	margin: 15px 0;
+	clear: both;
+}
+.equity{	
+	float: left;
+	margin-bottom:20px;
+}
+.equity-left-panel{
+	font-size: 25px;
+	border-right: 1px solid #f1f1f1;
+	width: 100%;
+}
+.equity-right-panel{
+	margin-top: 15px;
+}
+.equity-left-panel p{
+	font-size: 30px;
+	margin: 0;
+}	
+.equity-left-panel h3{
+	font-size: 9px;
+}
+.equity-right-panel p{
+	font-size: 9px;
 }

@@ -30,15 +30,15 @@ class Stocktable extends Component {
   render() {
 
     return (
-      <div>        
+      <div>         
         <h3>Stock Market List</h3>
         <BootstrapTable data={this.props.data} striped={true}hover={true}search searchPlaceholder="Search" version='4' pagination>
           <TableHeaderColumn isKey dataField='id'>ID</TableHeaderColumn>
           <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
           <TableHeaderColumn dataField='stockprize'>Price</TableHeaderColumn>
           <TableHeaderColumn dataField='chart'> Chart</TableHeaderColumn>
-          <TableHeaderColumn dataField='' dataFormat={this.cellButtonForBuy}>Buy</TableHeaderColumn>
-          <TableHeaderColumn dataField='' dataFormat={this.cellButtonForSell}>Sell</TableHeaderColumn>
+          <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForBuy}>Buy</TableHeaderColumn>
+          <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForSell}>Sell</TableHeaderColumn>
         </BootstrapTable>
         
         <InputModal modalIsOpen={this.state.isOpenModal} compName={this.state.compName} 

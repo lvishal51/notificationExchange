@@ -8,6 +8,7 @@ import Buy from '../Dashboard/Buy';
 import Sell from '../Dashboard/Sell';
 import MockData from '../../mockData.json';
 import _ from 'underscore';
+import Userinfo from './Userinfo';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -24,7 +25,7 @@ class Dashboard extends Component {
 
     setInterval(function() {
       this.stockPriceVary();
-    }.bind(this), 2000);         
+    }.bind(this), 1000);         
   }
   stockPriceVary () {
     for(let i=0;i<this.state.data.length;i++) {
@@ -73,17 +74,24 @@ class Dashboard extends Component {
 
     return (
       <div className="col-md-12 demo-div heading-section">
-        <div className="lft col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <Stocktable data={this.state.data} handleBuy={this.handleBuy}/>
+        <div className="">
+          <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <Userinfo />
+            <Stocktable data={this.state.data} handleBuy={this.handleBuy} />
+          </div>
         </div>
-        <div className="lft col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
-        </div>       
-        <div className="lft col-xs-12 col-sm-12 col-md-6 col-lg-6">
-        <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
-        </div>  
-        
-      </div>
+        <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          {/* <div>
+            <Chart />
+          </div> */}
+          <div>
+            <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
+          </div>
+          <div>
+            <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
+          </div>
+        </div>      
+    </div>
     );
   }
 }
