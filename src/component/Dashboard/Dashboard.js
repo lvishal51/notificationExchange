@@ -1,6 +1,7 @@
 import React from "react";
 import { Component } from "react";
 import Chart from '../charts/Charts';
+import Userinfo from '../Dashboard/Userinfo';
 import PhaseOne from '../Dashboard/stock-list/PhaseOne';
 import Stocktable from '../Dashboard/stock-list/StockTable';
 import PhaseTwo from '../Dashboard/stock-list/PhaseTwo';
@@ -15,59 +16,59 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       data: MockData.stockData,
-      phase1:[],
-      phase2:[]
+      phase1: [],
+      phase2: []
     };
-    this.handleBuy = this.handleBuy.bind(this);    
-    this.handleCancelPhase1Order = this.handleCancelPhase1Order.bind(this);    
-    this.handleCancelPhase2Order = this.handleCancelPhase2Order.bind(this); 
-    this.stockPriceVary = this.stockPriceVary.bind(this); 
+    this.handleBuy = this.handleBuy.bind(this);
+    this.handleCancelPhase1Order = this.handleCancelPhase1Order.bind(this);
+    this.handleCancelPhase2Order = this.handleCancelPhase2Order.bind(this);
+    this.stockPriceVary = this.stockPriceVary.bind(this);
 
-    setInterval(function() {
+    setInterval(function () {
       this.stockPriceVary();
     }.bind(this), 1000);         
   }
-  stockPriceVary () {
-    for(let i=0;i<this.state.data.length;i++) {
+  stockPriceVary() {
+    for (let i = 0; i < this.state.data.length; i++) {
       this.state.data[i].stockprize = this.state.data[i].stockprize + Math.random();
-    } 
+    }
     //this.setState({data:this.state.data}); 
   }
   handleBuy(stock, quantity) {
-    let selectedStocks = {...stock};
+    let selectedStocks = { ...stock };
     selectedStocks.marketValue = stock.stockprize + Math.random();
-    selectedStocks.holdingValue =  selectedStocks.marketValue * quantity;
+    selectedStocks.holdingValue = selectedStocks.marketValue * quantity;
     selectedStocks.status = 'In Progress';
     this.state.phase1.push(selectedStocks);
 
-    
-    setTimeout(function() { 
-      this.setState({phase1:this.state.phase1}); 
+
+    setTimeout(function () {
+      this.setState({ phase1: this.state.phase1 });
     }.bind(this), 4000);
-      
-    setTimeout(function() {
+
+    setTimeout(function () {
       this.state.phase1.pop(selectedStocks);
-      let selectedStocksPhase2 = {...selectedStocks};
+      let selectedStocksPhase2 = { ...selectedStocks };
       selectedStocksPhase2.status = 'Order Placed';
       this.state.phase2.push(selectedStocksPhase2);
-      this.setState({phase2:this.state.phase2}); 
+      this.setState({ phase2: this.state.phase2 });
     }.bind(this), 9000);
   }
 
   handleCancelPhase1Order(row) {
-    let filtered = _(this.state.phase1).filter(function(item) {
+    let filtered = _(this.state.phase1).filter(function (item) {
       return item.name !== row.name
     });
-    setTimeout(function() { this.setState({phase1:filtered}); }.bind(this), 2000);
-    console.log('row',row);
+    setTimeout(function () { this.setState({ phase1: filtered }); }.bind(this), 2000);
+    console.log('row', row);
   }
 
   handleCancelPhase2Order(row) {
-    let filtered = _(this.state.phase2).filter(function(item) {
+    let filtered = _(this.state.phase2).filter(function (item) {
       return item.name !== row.name
     });
-    setTimeout(function() { this.setState({phase2:filtered}); }.bind(this), 3000);
-    console.log('row',row);
+    setTimeout(function () { this.setState({ phase2: filtered }); }.bind(this), 3000);
+    console.log('row', row);
   }
 
   render() {
