@@ -33,8 +33,28 @@ class Chart extends Component {
     };
     this._setBarChart = this._setBarChart.bind(this);    
     this._setLineChart = this._setLineChart.bind(this);    
-    this._setStepChart = this._setStepChart.bind(this);    
+    this._setStepChart = this._setStepChart.bind(this);
+    setInterval(function () {
+      this.stockPriceVary();
+    }.bind(this), 1000);
+
   }
+  stockPriceVary() {
+    console.log('stockPriceVary');
+    let data = {...this.state.data};
+    for (let i = 1; i < this.state.data.columns.length; i++) {
+      for(let j =1; j< this.state.data.columns[i].length; j++) {
+        if(j%2 == 0) {
+          this.state.data.columns[i][j] = this.state.data.columns[i][j] + 3;
+        } else {
+          this.state.data.columns[i][j] = this.state.data.columns[i][j] - 3;          
+        }
+      }
+    }
+    this.setState({data: data}); 
+  }
+
+
   _setBarChart() {
     let dataType = {...this.state.data};
     dataType.type = 'bar';
