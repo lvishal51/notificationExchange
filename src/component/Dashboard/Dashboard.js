@@ -10,6 +10,7 @@ import Sell from '../Dashboard/Sell';
 import MockData from '../../mockData.json';
 import _ from 'underscore';
 import Userinfo from './Userinfo';
+import Header from './Header';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -40,7 +41,7 @@ class Dashboard extends Component {
   }
   stockPriceVary2() {
     for (let i = 0; i < this.state.data.length; i++) {
-      this.state.data[i].stockprize = this.state.data[i].stockprize - (Math.random()*3);
+      this.state.data[i].stockprize = this.state.data[i].stockprize - (Math.random() * 3);
     }
     console.log("dataa2", this.state.data);
   }
@@ -85,7 +86,10 @@ class Dashboard extends Component {
 
     return (
       <div className="col-md-12 demo-div heading-section">
-        <div className="">
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+          <Header />         
+        </div>
+        <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <Userinfo />
             <Stocktable data={this.state.data} handleBuy={this.handleBuy} />
