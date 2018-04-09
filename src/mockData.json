@@ -1,65 +1,315 @@
 {
    "stockData": [
-  {
-    "id": 1,
-    "name": "Maruti",   
-    "stockinfo": "http://www.maruti.com",
-    "stockprize": 8900
-  },
-  {
-    "id": 2,
-    "name": "HDFCLIFE",   
-    "stockinfo": "http://www.hdfclife.com",
-    "stockprize": 480
-  },
-  {
-    "id": 3,
-    "name": "hudco",   
-    "stockinfo": "http://www.hudco.com",
-    "stockprize": 70  
-  },
-  {
-    "id": 4,
-    "name": "trident",   
-    "stockinfo": "http://www.trident.com",
-    "stockprize": 131  
-  },
-  {
-    "id": 5,
-    "name": "trigen",   
-    "stockinfo":"http://www.trigen.com",
-    "stockprize": 60
-  },
-  {
-    "id": 6,
-    "name": "LNT",   
-    "stockinfo": "http://www.lnt.com",
-    "stockprize": 345  
-  },
-  {
-    "id": 7,
-    "name": "Tencent Holdings Ltd",   
-    "stockinfo": "http://www.cdsl.com",
-    "stockprize": 1200  
-  },
-  {
-    "id": 8,
-    "name": "Opera Software ASA ADR",   
-    "stockinfo": "http://www.cdsl.com",
-    "stockprize": 542
-  },
-  {
-    "id": 9,
-    "name": "Sina Corp.",   
-    "stockinfo": "http://www.cdsl.com",
-    "stockprize": 83   
-  }
-  ,{
-    "id": 10,
-    "name": "Twitter Inc.",   
-    "stockinfo": "http://www.cdsl.com",
-    "stockprize": 28   
-  }
+    [
+    {
+      "id": 1,
+      "name": "Maruti",   
+      "stockinfo": "http://www.maruti.com",
+      "stockprize": 8900
+    },
+    {
+      "id": 2,
+      "name": "HDFCLIFE",   
+      "stockinfo": "http://www.hdfclife.com",
+      "stockprize": 480
+    },
+    {
+      "id": 3,
+      "name": "hudco",   
+      "stockinfo": "http://www.hudco.com",
+      "stockprize": 70  
+    },
+    {
+      "id": 4,
+      "name": "trident",   
+      "stockinfo": "http://www.trident.com",
+      "stockprize": 131  
+    },
+    {
+      "id": 5,
+      "name": "trigen",   
+      "stockinfo":"http://www.trigen.com",
+      "stockprize": 60
+    },
+    {
+      "id": 6,
+      "name": "LNT",   
+      "stockinfo": "http://www.lnt.com",
+      "stockprize": 345  
+    },
+    {
+      "id": 7,
+      "name": "Tencent Holdings Ltd",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 1200  
+    },
+    {
+      "id": 8,
+      "name": "Opera Software ASA ADR",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 542
+    },
+    {
+      "id": 9,
+      "name": "Sina Corp.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 83   
+    }
+    ,{
+      "id": 10,
+      "name": "Twitter Inc.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 28   
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "Maruti",   
+      "stockinfo": "http://www.maruti.com",
+      "stockprize": 9000
+    },
+    {
+      "id": 2,
+      "name": "HDFCLIFE",   
+      "stockinfo": "http://www.hdfclife.com",
+      "stockprize": 580
+    },
+    {
+      "id": 3,
+      "name": "hudco",   
+      "stockinfo": "http://www.hudco.com",
+      "stockprize": 270  
+    },
+    {
+      "id": 4,
+      "name": "trident",   
+      "stockinfo": "http://www.trident.com",
+      "stockprize": 531  
+    },
+    {
+      "id": 5,
+      "name": "trigen",   
+      "stockinfo":"http://www.trigen.com",
+      "stockprize": 60
+    },
+    {
+      "id": 6,
+      "name": "LNT",   
+      "stockinfo": "http://www.lnt.com",
+      "stockprize": 245  
+    },
+    {
+      "id": 7,
+      "name": "Tencent Holdings Ltd",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 1100  
+    },
+    {
+      "id": 8,
+      "name": "Opera Software ASA ADR",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 442
+    },
+    {
+      "id": 9,
+      "name": "Sina Corp.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 183   
+    }
+    ,{
+      "id": 10,
+      "name": "Twitter Inc.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 128   
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "Maruti",   
+      "stockinfo": "http://www.maruti.com",
+      "stockprize": 7900
+    },
+    {
+      "id": 2,
+      "name": "HDFCLIFE",   
+      "stockinfo": "http://www.hdfclife.com",
+      "stockprize": 280
+    },
+    {
+      "id": 3,
+      "name": "hudco",   
+      "stockinfo": "http://www.hudco.com",
+      "stockprize": 270  
+    },
+    {
+      "id": 4,
+      "name": "trident",   
+      "stockinfo": "http://www.trident.com",
+      "stockprize": 331  
+    },
+    {
+      "id": 5,
+      "name": "trigen",   
+      "stockinfo":"http://www.trigen.com",
+      "stockprize": 20
+    },
+    {
+      "id": 6,
+      "name": "LNT",   
+      "stockinfo": "http://www.lnt.com",
+      "stockprize": 145  
+    },
+    {
+      "id": 7,
+      "name": "Tencent Holdings Ltd",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 1000  
+    },
+    {
+      "id": 8,
+      "name": "Opera Software ASA ADR",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 242
+    },
+    {
+      "id": 9,
+      "name": "Sina Corp.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 183   
+    }
+    ,{
+      "id": 10,
+      "name": "Twitter Inc.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 128   
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "Maruti",   
+      "stockinfo": "http://www.maruti.com",
+      "stockprize": 2900
+    },
+    {
+      "id": 2,
+      "name": "HDFCLIFE",   
+      "stockinfo": "http://www.hdfclife.com",
+      "stockprize": 980
+    },
+    {
+      "id": 3,
+      "name": "hudco",   
+      "stockinfo": "http://www.hudco.com",
+      "stockprize": 30  
+    },
+    {
+      "id": 4,
+      "name": "trident",   
+      "stockinfo": "http://www.trident.com",
+      "stockprize": 31  
+    },
+    {
+      "id": 5,
+      "name": "trigen",   
+      "stockinfo":"http://www.trigen.com",
+      "stockprize": 160
+    },
+    {
+      "id": 6,
+      "name": "LNT",   
+      "stockinfo": "http://www.lnt.com",
+      "stockprize": 445  
+    },
+    {
+      "id": 7,
+      "name": "Tencent Holdings Ltd",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 1560  
+    },
+    {
+      "id": 8,
+      "name": "Opera Software ASA ADR",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 742
+    },
+    {
+      "id": 9,
+      "name": "Sina Corp.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 823   
+    }
+    ,{
+      "id": 10,
+      "name": "Twitter Inc.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 128   
+    }
+  ],
+  [
+    {
+      "id": 1,
+      "name": "Maruti",   
+      "stockinfo": "http://www.maruti.com",
+      "stockprize": 10900
+    },
+    {
+      "id": 2,
+      "name": "HDFCLIFE",   
+      "stockinfo": "http://www.hdfclife.com",
+      "stockprize": 580
+    },
+    {
+      "id": 3,
+      "name": "hudco",   
+      "stockinfo": "http://www.hudco.com",
+      "stockprize": 270  
+    },
+    {
+      "id": 4,
+      "name": "trident",   
+      "stockinfo": "http://www.trident.com",
+      "stockprize": 31  
+    },
+    {
+      "id": 5,
+      "name": "trigen",   
+      "stockinfo":"http://www.trigen.com",
+      "stockprize": 460
+    },
+    {
+      "id": 6,
+      "name": "LNT",   
+      "stockinfo": "http://www.lnt.com",
+      "stockprize": 945  
+    },
+    {
+      "id": 7,
+      "name": "Tencent Holdings Ltd",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 2200  
+    },
+    {
+      "id": 8,
+      "name": "Opera Software ASA ADR",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 542
+    },
+    {
+      "id": 9,
+      "name": "Sina Corp.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 883   
+    }
+    ,{
+      "id": 10,
+      "name": "Twitter Inc.",   
+      "stockinfo": "http://www.cdsl.com",
+      "stockprize": 528   
+    }
+  ]            
 ],
 "lineChartData" : {
     "json": [

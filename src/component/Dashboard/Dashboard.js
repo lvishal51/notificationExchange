@@ -16,7 +16,7 @@ class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: MockData.stockData,
+      data: MockData.stockData[0],
       phase1: [],
       phase2: []
     };
@@ -26,12 +26,8 @@ class Dashboard extends Component {
     this.stockPriceVary = this.stockPriceVary.bind(this);
 
     setInterval(function () {
-      this.stockPriceVary();
-    }.bind(this), 1000);
-
-    setInterval(function () {
-      this.stockPriceVary2();
-    }.bind(this), 3000);
+      //this.stockPriceVary();
+    }.bind(this), 2000);
   }
   stockPriceVary() {
     for (let i = 0; i < this.state.data.length; i++) {
@@ -46,23 +42,26 @@ class Dashboard extends Component {
     console.log("dataa2", this.state.data);
   }
   handleBuy(stock, quantity) {
+    let stockData1 = [...this.state.phase1];
+    let stockData2 = [...this.state.phase2];
     let selectedStocks = { ...stock };
     selectedStocks.marketValue = stock.stockprize + Math.random();
     selectedStocks.holdingValue = selectedStocks.marketValue * quantity;
     selectedStocks.status = 'In Progress';
-    this.state.phase1.push(selectedStocks);
+    stockData1.push(selectedStocks);
 
 
     setTimeout(function () {
-      this.setState({ phase1: this.state.phase1 });
+      this.setState({ phase1: stockData1 });
     }.bind(this), 4000);
 
     setTimeout(function () {
       this.state.phase1.pop(selectedStocks);
+      
       let selectedStocksPhase2 = { ...selectedStocks };
       selectedStocksPhase2.status = 'Order Placed';
-      this.state.phase2.push(selectedStocksPhase2);
-      this.setState({ phase2: this.state.phase2 });
+      stockData2.push(selectedStocksPhase2);
+      this.setState({ phase2: stockData2 });
     }.bind(this), 9000);
   }
 
