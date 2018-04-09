@@ -4,6 +4,9 @@ import { Component } from "react";
 class Header extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+     
+    };
   }
 
   render() {
@@ -18,11 +21,11 @@ class Header extends Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">
-                  Dashboard</a>
+                  NIFTY <span>{this.props.exchange.niftyprize}</span></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">
-                  Chart</a>
+                  SENSEX <span>{this.props.exchange.sensexprize}</span></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">

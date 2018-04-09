@@ -17,6 +17,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       data: MockData.stockData[0],
+      exchangedata: MockData.exchangeData[0],
       phase1: [],
       phase2: []
     };
@@ -24,22 +25,24 @@ class Dashboard extends Component {
     this.handleCancelPhase1Order = this.handleCancelPhase1Order.bind(this);
     this.handleCancelPhase2Order = this.handleCancelPhase2Order.bind(this);
     this.stockPriceVary = this.stockPriceVary.bind(this);
+    this.exchangePriceVary = this.exchangePriceVary.bind(this);
 
     setInterval(function () {
-      //this.stockPriceVary();
+      this.stockPriceVary();     
     }.bind(this), 2000);
+  }
+ 
+
+  exchangePriceVary() {
+    for (let i = 0; i < this.state.exchangedata.length; i++) {
+      this.state.exchangedata.niftyprize = this.state.exchangedata.niftyprize + Math.random();
+      console.log("nifty", this.state.exchangedata.niftyprize);
+    } 
   }
   stockPriceVary() {
     for (let i = 0; i < this.state.data.length; i++) {
       this.state.data[i].stockprize = this.state.data[i].stockprize + Math.random();
     }
-    console.log("dataa1", this.state.data);
-  }
-  stockPriceVary2() {
-    for (let i = 0; i < this.state.data.length; i++) {
-      this.state.data[i].stockprize = this.state.data[i].stockprize - (Math.random() * 3);
-    }
-    console.log("dataa2", this.state.data);
   }
   handleBuy(stock, quantity) {
     let stockData1 = [...this.state.phase1];
@@ -57,7 +60,7 @@ class Dashboard extends Component {
 
     setTimeout(function () {
       this.state.phase1.pop(selectedStocks);
-      
+
       let selectedStocksPhase2 = { ...selectedStocks };
       selectedStocksPhase2.status = 'Order Placed';
       stockData2.push(selectedStocksPhase2);
@@ -86,7 +89,7 @@ class Dashboard extends Component {
     return (
       <div className="col-md-12 demo-div heading-section">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <Header />         
+          <Header exchange={this.state.exchangedata} />
         </div>
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
