@@ -40,7 +40,7 @@ class Chart extends Component {
 
   }
   stockPriceVary() {
-    console.log('stockPriceVary');
+   // console.log('stockPriceVary');
     let data = {...this.state.data};
     for (let i = 1; i < this.state.data.columns.length; i++) {
       for(let j =1; j< this.state.data.columns[i].length; j++) {
@@ -73,13 +73,13 @@ class Chart extends Component {
   
   render() {
     return (
-      <div>
+      <div className="charts"> 
         <C3Chart axis={this.state.axis} data={this.state.data} />
         <p>
-          Chart Type
-          <button onClick={this._setBarChart}>bar</button> 
-          <button onClick={this._setLineChart}>Line</button>
-          <button onClick={this._setStepChart}>Step</button>
+          <h4>Chart Type</h4>
+          <button className="chartbutton" onClick={this._setBarChart}>bar</button> 
+          <button className="chartbutton" onClick={this._setLineChart}>Line</button>
+          <button className="chartbutton" onClick={this._setStepChart}>Step</button>
         </p>    
 
 {/*          <PieChart/>

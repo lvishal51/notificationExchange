@@ -26,13 +26,23 @@ class Dashboard extends Component {
 
     setInterval(function () {
       this.stockPriceVary();
-    }.bind(this), 1000);         
+    }.bind(this), 1000);
+
+    setInterval(function () {
+      this.stockPriceVary2();
+    }.bind(this), 3000);
   }
   stockPriceVary() {
     for (let i = 0; i < this.state.data.length; i++) {
       this.state.data[i].stockprize = this.state.data[i].stockprize + Math.random();
     }
-    //this.setState({data:this.state.data}); 
+    console.log("dataa1", this.state.data);
+  }
+  stockPriceVary2() {
+    for (let i = 0; i < this.state.data.length; i++) {
+      this.state.data[i].stockprize = this.state.data[i].stockprize - (Math.random()*3);
+    }
+    console.log("dataa2", this.state.data);
   }
   handleBuy(stock, quantity) {
     let selectedStocks = { ...stock };
@@ -82,7 +92,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
-           <div>
+          <div>
             <Chart />
           </div>
           <div>
@@ -91,8 +101,8 @@ class Dashboard extends Component {
           <div>
             <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
           </div>
-        </div>      
-    </div>
+        </div>
+      </div>
     );
   }
 }
