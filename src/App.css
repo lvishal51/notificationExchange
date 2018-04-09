@@ -272,3 +272,23 @@ font-size: 20px;
 .equity-right-panel p{
 	font-size: 9px;
 }
+.charts h4{
+	margin-right: 10px;
+	font-weight: bold;
+}
+.chartbutton{
+	background: #444;
+    padding: 6px 25px;
+    border: 1px solid #000;
+    color: #fff;
+    font-size: 15px;
+    font-weight: bold;
+}
+.rrr{
+	color: red;
+	background:pink;
+}
+.bg-warning{
+	color: black;
+	background:yellow;
+}
