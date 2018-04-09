@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { BootstrapTable, TableHeaderColumn } from "react-bootstrap-table";
 import InputModal from '../../modal/InputModal';
+import _ from 'underscore';
 
 
 class Stocktable extends Component {
@@ -13,6 +14,7 @@ class Stocktable extends Component {
     };
     this.cellButtonForBuy = this.cellButtonForBuy.bind(this);
     this.cellButtonForSell = this.cellButtonForSell.bind(this);
+    this.getClass = this.getClass.bind(this);
   }
   cellButtonForBuy(cell, row) {
     return <button className="buysellbtn bluecolor" onClick={() => this.handleopenModal(row, 'Buy')}>B</button>;
@@ -26,19 +28,25 @@ class Stocktable extends Component {
   handleCloseModal() {
     this.setState({ isOpenModal: false, selectedCandidate: {}, compName: null });
   }
-  getClass(cell, row) {
-   // alert("mm");
-    return "bg-warning";
-    // if (row.x == 1) {
-    //   return "bg-info";
-    // } else {
-    //   return "bg-warning";
-    // }
-   // dataClass={this.getClass}
+  getClass(row) {
+    let oldData = _.find(this.props.originalData, function(item) {
+      return item.id === row.id; 
+    });
+    console.log('oldData',oldData);
+     if (row.id == 1) {
+       return "bg-info";
+     } else {
+       return "bg-warning";
+     }
+    //dataClass={this.getClass}
   }
-  columnClassNameFormat(fieldValue, row, rowIdx, colIdx,data) {
-   /// console.log("rr", this.props.data);
-    return rowIdx % 2 === 0 ? 'rrr' : 'bg-warning';
+  columnClassNameFormat(fieldValue, row, rowIdx, colIdx) {
+    /* let oldData = _.find(this.props.originalData, function(item) {
+      return item.id === row.id; 
+    }); */
+   // console.log('oldData',this.props.data);
+   //console.log("rr", row);
+    return rowIdx % 2 === 0 ? 'bluecolor' : 'orangecolor';
   }
   render() {
 

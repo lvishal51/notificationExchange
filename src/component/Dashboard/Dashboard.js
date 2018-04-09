@@ -28,7 +28,7 @@ class Dashboard extends Component {
     this.exchangePriceVary = this.exchangePriceVary.bind(this);
 
     setInterval(function () {
-      this.stockPriceVary();     
+      this.stockPriceVary();
     }.bind(this), 2000);
   }
  
@@ -40,9 +40,10 @@ class Dashboard extends Component {
     } 
   }
   stockPriceVary() {
-    for (let i = 0; i < this.state.data.length; i++) {
-      this.state.data[i].stockprize = this.state.data[i].stockprize + Math.random();
-    }
+    let randNumber =  Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+    let stockData = [...this.state.data];
+    stockData = MockData.stockData[randNumber];    
+    this.setState({ data: stockData });
   }
   handleBuy(stock, quantity) {
     let stockData1 = [...this.state.phase1];
@@ -59,7 +60,9 @@ class Dashboard extends Component {
     }.bind(this), 4000);
 
     setTimeout(function () {
-      this.state.phase1.pop(selectedStocks);
+
+      stockData1 = _.without(stockData1, selectedStocks);
+      this.state.phase1 = stockData1;
 
       let selectedStocksPhase2 = { ...selectedStocks };
       selectedStocksPhase2.status = 'Order Placed';
@@ -73,7 +76,6 @@ class Dashboard extends Component {
       return item.name !== row.name
     });
     setTimeout(function () { this.setState({ phase1: filtered }); }.bind(this), 2000);
-    console.log('row', row);
   }
 
   handleCancelPhase2Order(row) {
@@ -81,7 +83,6 @@ class Dashboard extends Component {
       return item.name !== row.name
     });
     setTimeout(function () { this.setState({ phase2: filtered }); }.bind(this), 3000);
-    console.log('row', row);
   }
 
   render() {
@@ -94,7 +95,7 @@ class Dashboard extends Component {
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <Userinfo />
-            <Stocktable data={this.state.data} handleBuy={this.handleBuy} />
+            <Stocktable originalData = {MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
