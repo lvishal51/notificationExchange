@@ -25,24 +25,17 @@ class Dashboard extends Component {
     this.handleCancelPhase1Order = this.handleCancelPhase1Order.bind(this);
     this.handleCancelPhase2Order = this.handleCancelPhase2Order.bind(this);
     this.stockPriceVary = this.stockPriceVary.bind(this);
-    this.exchangePriceVary = this.exchangePriceVary.bind(this);
 
     setInterval(function () {
       this.stockPriceVary();
     }.bind(this), 5000);
   }
- 
-
-  exchangePriceVary() {
-    for (let i = 0; i < this.state.exchangedata.length; i++) {
-      this.state.exchangedata.niftyprize = this.state.exchangedata.niftyprize + Math.random();
-      console.log("nifty", this.state.exchangedata.niftyprize);
-    } 
-  }
   stockPriceVary() {
     let randNumber =  Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData = [...this.state.data];
-    stockData = MockData.stockData[randNumber];    
+    stockData = MockData.stockData[randNumber];
+    this.state.exchangedata = MockData.exchangeData[randNumber];
+    console.log('this.state.exchangedata',this.state.exchangedata);
     this.setState({ data: stockData });
   }
   handleBuy(stock, quantity) {
@@ -90,7 +83,7 @@ class Dashboard extends Component {
     return (
       <div className="col-md-12 demo-div heading-section">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <Header exchange={this.state.exchangedata} />
+          <Header exchange={this.state.exchangedata[0]} />
         </div>
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
