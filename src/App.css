@@ -225,11 +225,17 @@ border: none;
 	background: #89c2ff;
 } 
 .orangecolor{
-	background: #f77b72;
+	background: #F08E45;
+}
+.greencolor{
+	background: #68EE82;
+}
+.redcolor{
+	background: #F38D81;
 }   
 .orangebtn{	
-	background-color: #f77b72 !important;
-	border: 1px solid #f77b72 !important;  
+	background-color: #F08E45 !important;
+	border: 1px solid #F08E45 !important;  
 }
 .bluebtn{
 	background-color: #89c2ff !important;

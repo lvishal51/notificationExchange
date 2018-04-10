@@ -29,7 +29,7 @@ class Dashboard extends Component {
 
     setInterval(function () {
       this.stockPriceVary();
-    }.bind(this), 2000);
+    }.bind(this), 5000);
   }
  
 
