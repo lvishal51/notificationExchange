@@ -19,12 +19,12 @@ class Userinfo extends Component {
               <p>Market Value</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>61k</p>
+                  <p>{this.props.userStockData.marketValue}k</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>Margin Used <span>-32.12k</span></p>
-                  <p>Account Value <span>12.54k</span></p>
+                  <p>Margin Used <span>{this.props.userStockData.marketMarginUsed}k</span></p>
+                  <p>Account Value <span>{this.props.userStockData.marketAccountValue}k</span></p>
                 </div>
               </div>
             </div>
@@ -32,12 +32,12 @@ class Userinfo extends Component {
               <p>Holding Value</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>48.9k</p>
+                  <p>{this.props.userStockData.holdingValue}k</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>Margin Used <span>-32.12k</span></p>
-                  <p>Account Value <span>12.54k</span></p>
+                  <p>Margin Used <span>{this.props.userStockData.holdingMarginUsed}k</span></p>
+                  <p>Account Value <span>{this.props.userStockData.holdingAccountValue}k</span></p>
                 </div>
               </div>
             </div>
@@ -48,12 +48,12 @@ class Userinfo extends Component {
               <p>TODAY'S P/L</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>55.4k</p>
+                  <p>{this.props.userStockData.todaysPl}k</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>Margin Used <span>-32.12k</span></p>
-                  <p>Account Value <span>12.54k</span></p>
+                  <p>Margin Used <span>{this.props.userStockData.todaysPlMarginUsed}k</span></p>
+                  <p>Account Value <span>{this.props.userStockData.todaysPlAccountValue}k</span></p>
                 </div>
               </div>
             </div>
@@ -61,12 +61,12 @@ class Userinfo extends Component {
               <p>Unrealised P/L</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>64.5k</p>
+                  <p>{this.props.userStockData.unrealisedPl}k</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>Margin Used <span>-32.12k</span></p>
-                  <p>Account Value <span>12.54k</span></p>
+                  <p>Margin Used <span>{this.props.userStockData.unrealisedPlMarginUsed}k</span></p>
+                  <p>Account Value <span>{this.props.userStockData.unrealisedPlAccountValue}k</span></p>
                 </div>
               </div>
             </div>
