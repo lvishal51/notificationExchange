@@ -13,9 +13,10 @@ class Userinfo extends Component {
           <div className="nickname">Hi User</div>
           <div className="bottomborder"> </div>
         </div>
+    
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">        
             <div className="equity col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <p>Equity</p>
+              <p>Market Value</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
                   <p>61k</p>
@@ -28,10 +29,39 @@ class Userinfo extends Component {
               </div>
             </div>
             <div className="equity col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <p>Holdings</p>
+              <p>Holding Value</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>61k</p>
+                  <p>48.9k</p>
+                  <h3>Available Balance</h3>
+                </div>
+                <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <p>Margin Used <span>-32.12k</span></p>
+                  <p>Account Value <span>12.54k</span></p>
+                </div>
+              </div>
+            </div>
+            <div className="bottomborder"> </div>
+        </div>
+        <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">        
+            <div className="equity col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <p>TODAY'S P/L</p>
+              <div>
+                <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <p>55.4k</p>
+                  <h3>Available Balance</h3>
+                </div>
+                <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <p>Margin Used <span>-32.12k</span></p>
+                  <p>Account Value <span>12.54k</span></p>
+                </div>
+              </div>
+            </div>
+            <div className="equity col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <p>Unrealised P/L</p>
+              <div>
+                <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                  <p>64.5k</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">

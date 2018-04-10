@@ -1,10 +1,35 @@
 {
   "exchangeData": [
-   
+    [
       {
         "niftyprize": 10386.55,
-        "sensexprize": 35835.85       
-      }   
+        "sensexprize": 38835.85
+      }
+    ],
+    [
+      {
+        "niftyprize": 10286.55,
+        "sensexprize": 47835.85
+      }
+    ],
+    [
+      {
+        "niftyprize": 22386.55,
+        "sensexprize": 30835.85
+      }
+    ],
+    [
+      {
+        "niftyprize": 10586.55,
+        "sensexprize": 36835.85
+      }
+    ],
+    [
+      {
+        "niftyprize": 9586.55,
+        "sensexprize": 56835.85
+      }
+    ]
   ],
   "stockData": [
     [
