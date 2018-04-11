@@ -31,11 +31,11 @@ class Dashboard extends Component {
     }.bind(this), 5000);
   }
   stockPriceVary() {
-    let randNumber =  Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+    let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData = [...this.state.data];
     stockData = MockData.stockData[randNumber];
     this.state.exchangedata = MockData.exchangeData[randNumber];
-    console.log('this.state.exchangedata',this.state.exchangedata);
+    console.log('this.state.exchangedata', this.state.exchangedata);
     this.setState({ data: stockData });
   }
   handleBuy(stock, quantity) {
@@ -85,23 +85,31 @@ class Dashboard extends Component {
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <Header exchange={this.state.exchangedata[0]} />
         </div>
+
+
+
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <Userinfo />
-            <Stocktable originalData = {MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
+            <Stocktable originalData={MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
+            <div> <Userinfo /> </div>
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          <div className="margin-b-20">
+            <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
+          </div>
+          <div className="margin-b-60">
+            <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
+          </div>
+
           <div>
             <Chart />
           </div>
-          <div>
-            <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
-          </div>
-          <div>
-            <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
-          </div>
+
         </div>
+
+
+
       </div>
     );
   }

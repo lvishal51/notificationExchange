@@ -28,7 +28,7 @@ class Chart extends Component {
     this._setStepChart = this._setStepChart.bind(this);
     setInterval(function () {
       this.stockPriceVary();
-    }.bind(this), 1000);
+    }.bind(this), 5000);
 
   }
   stockPriceVary() {

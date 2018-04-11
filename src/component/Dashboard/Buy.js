@@ -44,10 +44,10 @@ class Buy extends Component {
           <div className="row form_group">
             <div className="col-sm-7">
               <span>
-                <button type="submit" className="btn btn-primary primarybtn" bluebtn onClick = {() => {this.props.handleBuy(this.props.data, this.state.quantity);this.props.handleCloseModal();}}>BUY</button>
+                <button type="submit" className="btn btn-primary primarybtn bluebtn"  onClick = {() => {this.props.handleBuy(this.props.data, this.state.quantity);this.props.handleCloseModal();}}>BUY</button>
               </span>
               <span className="margin-l-5">
-                <button className="btn btn-primary primarybtn" bluebtn onClick={this.props.handleCloseModal}>CANCEL</button>
+                <button className="btn btn-primary primarybtn bluebtn"  onClick={this.props.handleCloseModal}>CANCEL</button>
               </span>
             </div>
           </div>
