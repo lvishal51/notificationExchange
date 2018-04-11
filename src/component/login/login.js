@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { router,Redirect,Route } from 'react-router'
-import { Link } from 'react-router-link'
+import { Redirect } from 'react-router'
 import axios from 'axios';
 //import '../dashboard/dashboard'
 import './login.css'

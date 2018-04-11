@@ -71,8 +71,8 @@ class Chart extends Component {
     return (
       <div className="charts"> 
         <C3Chart axis={this.state.axis} data={this.state.data} />
+        <h4>Chart Type</h4>
         <p>
-          <h4>Chart Type</h4>
           <button className="chartbutton" onClick={this._setBarChart}>bar</button> 
           <button className="chartbutton" onClick={this._setLineChart}>Line</button>
           <button className="chartbutton" onClick={this._setStepChart}>Step</button>

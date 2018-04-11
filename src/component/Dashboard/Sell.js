@@ -36,10 +36,10 @@ class Sell extends Component {
             <div className="row form_group">
               <div className="col-sm-7">
                 <span>
-                  <button type="submit" className="btn btn-primary primarybtn orangebtn">SELL</button>
+                  <button type="submit" className="btn btn-primary primarybtn orangebtn" onClick = {() => {this.props.handleBuy(this.props.data, this.state.quantity);this.props.handleCloseModal();}}>SELL</button>
                 </span>
                 <span className="margin-l-5">
-                  <button className="btn btn-primary primarybtn orangebtn">CANCEL</button>
+                  <button className="btn btn-primary primarybtn orangebtn" onClick={this.props.handleCloseModal}>CANCEL</button>
                 </span>
               </div>
             </div>
@@ -51,4 +51,3 @@ class Sell extends Component {
 }
 
 export default Sell;
-{/* <div className=""></div> */ }

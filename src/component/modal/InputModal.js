@@ -1,6 +1,5 @@
 import React from 'react';
 import { Component } from "react";
-import ReactDOM from 'react-dom';
 import Modal from 'react-responsive-modal';
 import Sell from '../Dashboard/Sell';
 import Buy from '../Dashboard/Buy';
@@ -10,7 +9,7 @@ class InputModal extends Component {
   constructor(props) {
     super(props);
     this.state = {
-     
+      showModal :false
     };
     this.handleModalState = this.handleModalState.bind(this);
   } 
@@ -24,9 +23,8 @@ class InputModal extends Component {
     this.setState({ showModal: !this.state.showModal, compName: nextProps.compName, data: nextProps.data });
   }
   render() {
-    const { open } = this.state;
     let data = this.state.compName === "Sell" ? 
-    <Sell data={this.state.data} handleCloseModal={this.props.handleCloseModal}/>:    
+    <Sell data={this.state.data} handleCloseModal={this.props.handleCloseModal} handleBuy={this.props.handleBuy}/>:    
     <Buy data={this.state.data} handleCloseModal={this.props.handleCloseModal} handleBuy={this.props.handleBuy}/>;
     return (
       <div>          

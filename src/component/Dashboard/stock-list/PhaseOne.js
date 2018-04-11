@@ -6,7 +6,6 @@ class PhaseOne extends Component {
   constructor(props) {
     super(props);
     this.cellButtonForCancel = this.cellButtonForCancel.bind(this);    
-    console.log('PhaseOne-props',this.props);
   };
 
   cellButtonForCancel(cell, row) {
