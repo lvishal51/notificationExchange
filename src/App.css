@@ -223,6 +223,7 @@ border: none;
 }
 .redcolor{
 	color: red;
+	
 	background-image: url("./images/down-arrow.png");
 	background-repeat: no-repeat;
 	background-position: 85% 45%;
