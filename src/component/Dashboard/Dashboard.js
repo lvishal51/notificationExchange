@@ -106,7 +106,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div> <Userinfo userStockData={this.state.userStockData}/> </div>
+          <div> <Userinfo userStockData={this.state.userStockData} userStockOldData = {MockData.userStockData[0]}/> </div>
           <div><Chart /></div>
         </div>
 

@@ -2,7 +2,19 @@ import React from "react";
 import { Component } from "react";
 
 class Userinfo extends Component {
-
+  constructor(props) {
+    super(props);
+    this.getClass = this.getClass.bind(this);
+  }
+  getClass(newValue, oldValue) {
+    if (newValue > oldValue) {
+      return "greencolor";
+    } else if (newValue < oldValue) {
+      return "redcolor";
+    } else {
+      return; 
+    }
+  }
   render() {
     return (
       <div className="userinfo">
@@ -10,7 +22,6 @@ class Userinfo extends Component {
           <div className="nickname">Hi User</div>
           <div className="bottomborder"> </div>
         </div>
-    
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">        
             <div className="equity col-xs-12 col-sm-12 col-md-6 col-lg-6">
               <p>Market Value</p>
@@ -45,7 +56,7 @@ class Userinfo extends Component {
               <p>TODAY'S P/L</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>{this.props.userStockData.todaysPl}k</p>
+                  <p className={this.getClass(this.props.userStockData.marketValue, this.props.userStockOldData.marketValue)}>{this.props.userStockData.todaysPl}k ({this.props.userStockData.todaysPlChange} %)</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -58,7 +69,7 @@ class Userinfo extends Component {
               <p>Unrealised P/L</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p>{this.props.userStockData.unrealisedPl}k</p>
+                  <p className={this.getClass(this.props.userStockData.marketValue, this.props.userStockOldData.marketValue)}>{this.props.userStockData.unrealisedPl}k ({this.props.userStockData.unrealisedPlChange} %)</p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
