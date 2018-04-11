@@ -1,7 +1,6 @@
 import React from "react";
 import { Component } from "react";
 import Chart from '../charts/Charts';
-//import Userinfo from '../Dashboard/Userinfo';
 import PhaseOne from '../Dashboard/stock-list/PhaseOne';
 import Stocktable from '../Dashboard/stock-list/StockTable';
 import PhaseTwo from '../Dashboard/stock-list/PhaseTwo';
@@ -17,6 +16,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       data: MockData.stockData[0],
+      userStockData : MockData.userStockData[0],
       exchangedata: MockData.exchangeData[0],
       phase1: [],
       phase2: []
@@ -28,20 +28,21 @@ class Dashboard extends Component {
 
     setInterval(function () {
       this.stockPriceVary();
-    }.bind(this), 5000);
+    }.bind(this), 1000);
   }
   stockPriceVary() {
     let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData = [...this.state.data];
     stockData = MockData.stockData[randNumber];
     this.state.exchangedata = MockData.exchangeData[randNumber];
-    console.log('this.state.exchangedata', this.state.exchangedata);
     this.setState({ data: stockData });
   }
   handleBuy(stock, quantity) {
+    let randNumber =  Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData1 = [...this.state.phase1];
     let stockData2 = [...this.state.phase2];
     let selectedStocks = { ...stock };
+    this.state.userStockData = MockData.userStockData[randNumber];
     selectedStocks.marketValue = stock.stockprize + Math.random();
     selectedStocks.holdingValue = selectedStocks.marketValue * quantity;
     selectedStocks.status = 'In Progress';
@@ -91,7 +92,7 @@ class Dashboard extends Component {
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
             <Stocktable originalData={MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
-            <div> <Userinfo /> </div>
+            <div> <Userinfo userStockData={this.state.userStockData}/> </div>
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
