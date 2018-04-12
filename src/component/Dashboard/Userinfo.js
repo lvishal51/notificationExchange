@@ -8,9 +8,9 @@ class Userinfo extends Component {
   }
   getClass(newValue, oldValue) {
     if (newValue > oldValue) {
-      return "greencolor";
+      return "";
     } else if (newValue < oldValue) {
-      return "redcolor";
+      return "";
     } else {
       return; 
     }
@@ -56,7 +56,7 @@ class Userinfo extends Component {
               <p>TODAY'S P/L</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p className={this.getClass(this.props.userStockData.marketValue, this.props.userStockOldData.marketValue)}>{this.props.userStockData.todaysPl}k ({this.props.userStockData.todaysPlChange} %)</p>
+                  <p className={this.getClass(this.props.userStockData.marketValue, this.props.userStockOldData.marketValue)}>{this.props.userStockData.todaysPl}k<span className="percentgeval">({this.props.userStockData.todaysPlChange}%)</span></p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -69,7 +69,7 @@ class Userinfo extends Component {
               <p>Unrealised P/L</p>
               <div>
                 <div className="equity-left-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <p className={this.getClass(this.props.userStockData.marketValue, this.props.userStockOldData.marketValue)}>{this.props.userStockData.unrealisedPl}k ({this.props.userStockData.unrealisedPlChange} %)</p>
+                  <p className={this.getClass(this.props.userStockData.marketValue, this.props.userStockOldData.marketValue)}>{this.props.userStockData.unrealisedPl}k<span className="percentgeval">({this.props.userStockData.unrealisedPlChange}%)</span></p>
                   <h3>Available Balance</h3>
                 </div>
                 <div className="equity-right-panel col-xs-12 col-sm-12 col-md-6 col-lg-6">

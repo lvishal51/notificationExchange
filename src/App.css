@@ -2,31 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-
-.App-title {
-  font-size: 1.5em;
-}
-
-.App-intro {
-  font-size: large;
-}
-
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
 body{
 	margin: 0;
 	padding: 0;
@@ -51,10 +26,8 @@ body{
 .loginMain {
   margin:0 auto;
   max-width:500px;
-  margin-top: 200px;
-  
+  margin-top: 200px;  
 }
-
 .header div{
 	float: left;
 	color: #fff;
@@ -224,8 +197,8 @@ border: none;
 	background-position: 85% 45%;
 }
 .redcolor{
-	color: red;
-	
+	color: red;	
+	background-image: url("./images/down-arrow.png");
 	background-repeat: no-repeat;
 	background-position: 85% 45%;
 }   
@@ -238,15 +211,14 @@ border: none;
 	border: 1px solid #89c2ff !important;  
 }
 .userinfo{
-	margin-bottom: 30px;
+
 	color: #444;
 }
 .userinfo p{
-font-size: 20px;
+font-size: 17px;
 }
 .nickname{
-	font-size: 30px;
-    
+	font-size: 25px;    
 }
 .bottomborder{
 	border-bottom: 1px solid #f1f1f1;
@@ -263,17 +235,27 @@ font-size: 20px;
 	width: 100%;
 }
 .equity-right-panel{
-	margin-top: 15px;
+	margin-top: 5px;
 }
 .equity-left-panel p{
-	font-size: 30px;
-	margin: 0;
+	font-size: 20px;
+	margin: 1px 0;
 }	
 .equity-left-panel h3{
 	font-size: 9px;
 }
 .equity-right-panel p{
 	font-size: 9px;
+}
+.percentgeval{
+	font-size: 14px;
+    margin-left: 4px;}
+.chartc3{
+	margin-top: 10px;
+    float: left;
+}
+.charts .chartype{
+	margin-top:5px;
 }
 .charts h4{
 	margin-right: 10px;
@@ -291,6 +273,9 @@ font-size: 20px;
 	font-size: 13px;
 }
 /*Navbar*/
+.navbar-brand{
+	color: #fff;
+}
 .navbar{
 	border-radius: 0px;
 	height: 35px;
