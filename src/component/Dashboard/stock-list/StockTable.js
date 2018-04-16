@@ -16,6 +16,7 @@ class Stocktable extends Component {
     this.cellButtonForBuy = this.cellButtonForBuy.bind(this);
     this.cellButtonForSell = this.cellButtonForSell.bind(this);
     this.columnClassNameFormat = this.columnClassNameFormat.bind(this);
+     this.cellButtonForBuy = this.cellButtonForBuy.bind(this);
   }
   cellButtonForBuy(cell, row) {
     return <button className="buysellbtn bluecolor" onClick={() => this.handleopenModal(row, 'Buy')}>B</button>;
@@ -35,9 +36,9 @@ class Stocktable extends Component {
       return item.id === row.id; 
     });   
     if (row.stockprize > oldData.stockprize) {
-      return "greencolor";
+      return "greencolor greentablearrow";
     } else if (row.stockprize <= oldData.stockprize) {
-      return "redcolor";
+      return "redcolor redtablearrow";
     } else {
       return; 
     }
@@ -51,7 +52,7 @@ class Stocktable extends Component {
           <TableHeaderColumn isKey tdClassName={"redcolor"} dataField='id'>ID</TableHeaderColumn>
           <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
           <TableHeaderColumn dataField='stockprize' columnClassName={ this.columnClassNameFormat }>Price </TableHeaderColumn>
-          <TableHeaderColumn dataField='chart'> Chart</TableHeaderColumn>
+          <TableHeaderColumn dataField='chart' dataFormat={this.openChart}> Chart</TableHeaderColumn>
           <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForBuy}>Buy</TableHeaderColumn>
           <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForSell}>Sell</TableHeaderColumn>
         </BootstrapTable>
