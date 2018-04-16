@@ -5,10 +5,17 @@ class Sell extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      quantity :0
     };
+    this.handleChange = this.handleChange.bind(this);
   }
-
+  handleChange(event) {
+    const value = event.target.value;
+  const name = event.target.name;
+  this.setState({
+    [name]: value
+  });
+  }
   render() {
     return (
       <div>
@@ -18,7 +25,7 @@ class Sell extends Component {
             <div className="row form_group">
               <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <label className="input-label">QTY</label>
-                <input className="form-control" type="number" name="quantity" placeholder="" required />
+                <input className="form-control" type="number" name="quantity" onChange={this.handleChange} placeholder="" required />
               </div>
               <div className="col-xs-3 col-sm-3 col-md-3 col-lg-3">
                 <label className="input-label">PRICE</label>

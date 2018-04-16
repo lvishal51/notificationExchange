@@ -46,6 +46,8 @@ class Login extends Component {
             console.log(response);
         
             this.setState({redirect: true});
+            let tokenKey= response.headers.authorization;
+            localStorage.setItem('tokenId',tokenKey);
            
           })
           

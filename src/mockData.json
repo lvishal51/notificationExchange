@@ -85,31 +85,51 @@
     [
       {
         "niftyprize": 10386.55,
-        "sensexprize": 38835.85
+        "sensexprize": 38835.85,
+        "usdinrprize": 65.85,
+        "niftyChange": 6.55,
+        "sensexChange": 8.55,
+        "usdinrChange": 10.55
       }
     ],
     [
       {
         "niftyprize": 10286.55,
-        "sensexprize": 47835.85
+        "sensexprize": 47835.85,
+        "usdinrprize": 65.85,
+        "niftyChange": 6.55,
+        "sensexChange": 8.55,
+        "usdinrChange": 10.55
       }
     ],
     [
       {
         "niftyprize": 22386.55,
-        "sensexprize": 30835.85
+        "sensexprize": 30835.85,
+        "usdinrprize": 65.85,
+        "niftyChange": 6.55,
+        "sensexChange": 8.55,
+        "usdinrChange": 10.55
       }
     ],
     [
       {
         "niftyprize": 10586.55,
-        "sensexprize": 36835.85
+        "sensexprize": 36835.85,
+        "usdinrprize": 65.85,
+        "niftyChange": 6.55,
+        "sensexChange": 8.55,
+        "usdinrChange": 10.55
       }
     ],
     [
       {
         "niftyprize": 9586.55,
-        "sensexprize": 56835.85
+        "sensexprize": 56835.85,
+        "usdinrprize": 65.85,
+        "niftyChange": 6.55,
+        "sensexChange": 8.55,
+        "usdinrChange": 10.55
       }
     ]
   ],

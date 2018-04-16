@@ -192,16 +192,20 @@ border: none;
 }
 .greencolor{
 	color: green;
+}
+.greenarrow {
 	background-image: url("./images/up-arrow.png");
 	background-repeat: no-repeat;
 	background-position: 85% 45%;
 }
 .redcolor{
 	color: red;	
+}   
+.redarrow {
 	background-image: url("./images/down-arrow.png");
 	background-repeat: no-repeat;
 	background-position: 85% 45%;
-}   
+}
 .orangebtn{	
 	background-color: #F08E45 !important;
 	border: 1px solid #F08E45 !important;  

@@ -7,8 +7,17 @@ class Header extends Component {
     this.state = {
      
     };
+    this.getClass = this.getClass.bind(this);    
   }
-
+  getClass(newValue, oldValue) {
+    if (newValue > oldValue) {
+      return "greencolor";
+    } else if (newValue < oldValue) {
+      return "redcolor";
+    } else {
+      return; 
+    }
+  }
   render() {
     return (
       <div className="Header">
@@ -21,11 +30,15 @@ class Header extends Component {
             <ul className="navbar-nav ml-auto">
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">
-                  NIFTY <span>{this.props.exchange.niftyprize}</span></a>
+                  NIFTY <span className={this.getClass(this.props.exchange.niftyprize, this.props.exchangeOldData.niftyprize)}>{this.props.exchange.niftyprize}<span className="percentgeval">({this.props.exchange.niftyChange}%)</span></span></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">
-                  SENSEX <span>{this.props.exchange.sensexprize}</span></a>
+                  SENSEX <span className={this.getClass(this.props.exchange.sensexprize, this.props.exchangeOldData.sensexprize)}>{this.props.exchange.sensexprize}<span className="percentgeval">({this.props.exchange.sensexChange}%)</span></span></a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link" data-toggle="modal">
+                  USDINR <span className={this.getClass(this.props.exchange.usdinrprize, this.props.exchangeOldData.usdinrprize)}>{this.props.exchange.usdinrprize}<span className="percentgeval">({this.props.exchange.usdinrChange}%)</span></span></a>
               </li>
               <li className="nav-item">
                 <a className="nav-link" data-toggle="modal">

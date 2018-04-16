@@ -8,9 +8,9 @@ class Userinfo extends Component {
   }
   getClass(newValue, oldValue) {
     if (newValue > oldValue) {
-      return "";
+      return "greencolor greenarrow";
     } else if (newValue < oldValue) {
-      return "";
+      return "redcolor redarrow";
     } else {
       return; 
     }

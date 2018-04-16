@@ -9,12 +9,30 @@ import _ from 'underscore';
 import Userinfo from './Userinfo';
 import Header from './Header';
 import axios from 'axios';
+import chartsData from "../../data"
+
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
       data: MockData.stockData[0],
+      chartsData :{
+        data: {
+          x: 'x',
+          type: 'line',
+          //        xFormat: '%Y%m%d', // 'xFormat' can be used as custom format of 'x'
+          columns: chartsData[0]
+        },
+        axis: {
+          x: {
+            type: 'timeseries',
+            tick: {
+              format: '%Y-%m-%d'   
+            }
+          }
+        }  
+      },
       userStockData : MockData.userStockData[0],
       exchangedata: MockData.exchangeData[0],
       phase1: [],
@@ -25,6 +43,7 @@ class Dashboard extends Component {
     this.handleCancelPhase2Order = this.handleCancelPhase2Order.bind(this);
     this.stockPriceVary = this.stockPriceVary.bind(this);
     this.apiCall = this.apiCall.bind(this);
+    this._setChartType = this._setChartType.bind(this);
 
     setInterval(function () {
       this.stockPriceVary();
@@ -32,17 +51,50 @@ class Dashboard extends Component {
   }
   apiCall(message) {
     console.log('message',message);
-    axios.post(`https://jsonplaceholder.typicode.com/users`, { message })
+/*     let params = {
+      "templateId": "5acdd6228a73ee12e45042de",
+      "tenantId": "5acb31265da45d0ed80132fe",
+      "smsNotification": {
+        "toNumber": "9850076141",
+        "stockName": "MRF",
+        "quantity": "5",
+        "stockPrice": "394.99",
+        "exchangeName": "BSE",
+        "accountNumber": "E9XXX767",
+        "transactionDate": "11-APR-2018"
+      }
+    } 
+ */    axios.post(`api/notification/sms`, { 
+      
+        "templateId": "5acf37452293324eac63aedb",
+        "tenantId": "5acf35fa7774794cd9af3973",
+        "smsNotification": {
+          "toNumber": "9850076141",
+          "stockName": "MRF",
+          "quantity": "5",
+          "stockPrice": "394.99",
+          "exchangeName": "BSE",
+          "accountNumber": "E9XXX767",
+          "transactionDate": "11-APR-2018"
+        }
+       
+     })
       .then(res => {
-/*         console.log(res);
+        console.log(res);
         console.log(res.data);
- */      })
+    })
+  }
+  _setChartType(type) {
+    let chartData = { ...this.state.chartsData };
+    chartData.data.type = type;
+    this.setState({ chartsData: chartData });
   }
   stockPriceVary() {
     let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
-    let stockData = [...this.state.data];
+    let stockData = [...this.state.data], chartData = { ...this.state.chartsData };
     stockData = MockData.stockData[randNumber];
-    this.setState({ data: stockData, exchangedata : MockData.exchangeData[randNumber]});
+    chartData.data.columns = chartsData[randNumber];
+    this.setState({ data: stockData, exchangedata : MockData.exchangeData[randNumber], chartsData : chartData});
   }
   handleBuy(stock, quantity) {
     this.apiCall('Your order in process');
@@ -89,7 +141,7 @@ class Dashboard extends Component {
     return (
       <div className="col-md-12 demo-div heading-section">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <Header exchange={this.state.exchangedata[0]} />
+          <Header exchange={this.state.exchangedata[0]} exchangeOldData ={MockData.exchangeData[0][0]}/>
         </div>
 
 
@@ -107,7 +159,7 @@ class Dashboard extends Component {
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
           <div> <Userinfo userStockData={this.state.userStockData} userStockOldData = {MockData.userStockData[0]}/> </div>
-          <div><Chart /></div>
+          <div><Chart chartsData={this.state.chartsData} _setChartType = {this._setChartType}/></div>
         </div>
 
 
