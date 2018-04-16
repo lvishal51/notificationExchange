@@ -11,9 +11,9 @@ class Header extends Component {
   }
   getClass(newValue, oldValue) {
     if (newValue > oldValue) {
-      return "greencolor";
+      return "greencolorbold";
     } else if (newValue < oldValue) {
-      return "redcolor";
+      return "redcolorbold";
     } else {
       return; 
     }

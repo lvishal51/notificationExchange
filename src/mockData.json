@@ -27,7 +27,7 @@
        "todaysPlChange" : 9.50,
        "todaysPlMarginUsed":-66.50,
        "todaysPlAccountValue":78.32,
-       "unrealisedPl":4.5,
+       "unrealisedPl":1.5,
        "unrealisedPlChange" : 3.45,
        "unrealisedPlMarginUsed":-43.23,
        "unrealisedPlAccountValue":21.45
@@ -43,7 +43,7 @@
        "todaysPlChange" : 9.50,
        "todaysPlMarginUsed":-66.50,
        "todaysPlAccountValue":78.32,
-       "unrealisedPl":4.5,
+       "unrealisedPl":10.5,
        "unrealisedPlChange" : 3.45,
        "unrealisedPlMarginUsed":-43.23,
        "unrealisedPlAccountValue":21.45
@@ -75,7 +75,7 @@
        "todaysPlChange" : 9.50,
        "todaysPlMarginUsed":-66.50,
        "todaysPlAccountValue":78.32,
-       "unrealisedPl":4.5,
+       "unrealisedPl":2.5,
        "unrealisedPlChange" : 3.45,
        "unrealisedPlMarginUsed":-43.23,
        "unrealisedPlAccountValue":21.45
@@ -96,7 +96,7 @@
       {
         "niftyprize": 10286.55,
         "sensexprize": 47835.85,
-        "usdinrprize": 65.85,
+        "usdinrprize": 15.85,
         "niftyChange": 6.55,
         "sensexChange": 8.55,
         "usdinrChange": 10.55
@@ -106,7 +106,7 @@
       {
         "niftyprize": 22386.55,
         "sensexprize": 30835.85,
-        "usdinrprize": 65.85,
+        "usdinrprize": 85.85,
         "niftyChange": 6.55,
         "sensexChange": 8.55,
         "usdinrChange": 10.55
@@ -116,7 +116,7 @@
       {
         "niftyprize": 10586.55,
         "sensexprize": 36835.85,
-        "usdinrprize": 65.85,
+        "usdinrprize": 35.85,
         "niftyChange": 6.55,
         "sensexChange": 8.55,
         "usdinrChange": 10.55
@@ -126,7 +126,7 @@
       {
         "niftyprize": 9586.55,
         "sensexprize": 56835.85,
-        "usdinrprize": 65.85,
+        "usdinrprize": 95.85,
         "niftyChange": 6.55,
         "sensexChange": 8.55,
         "usdinrChange": 10.55

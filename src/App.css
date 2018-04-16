@@ -193,10 +193,19 @@ border: none;
 .greencolor{
 	color: green;
 }
+.greencolorbold{
+	color: #92dd5a;
+	font-weight: bold;
+}
+.redcolorbold{
+	color: #ff7f7f;
+	font-weight: bold;
+}
 .greenarrow {
 	background-image: url("./images/up-arrow.png");
 	background-repeat: no-repeat;
-	background-position: 85% 45%;
+	background-position: 97% 70%;	
+	background-size: 10px;
 }
 .redcolor{
 	color: red;	
@@ -204,7 +213,18 @@ border: none;
 .redarrow {
 	background-image: url("./images/down-arrow.png");
 	background-repeat: no-repeat;
-	background-position: 85% 45%;
+	background-position: 97% 70%;	
+	background-size: 10px;
+}
+.greentablearrow {
+	background-image: url("./images/up-arrow.png");
+	background-repeat: no-repeat;
+	background-position: 90% 45%;	
+}  
+.redtablearrow {
+	background-image: url("./images/down-arrow.png");
+	background-repeat: no-repeat;
+	background-position: 90% 45%;		
 }
 .orangebtn{	
 	background-color: #F08E45 !important;
@@ -242,7 +262,7 @@ font-size: 17px;
 	margin-top: 5px;
 }
 .equity-left-panel p{
-	font-size: 20px;
+	font-size: 15px;
 	margin: 1px 0;
 }	
 .equity-left-panel h3{
@@ -253,7 +273,9 @@ font-size: 17px;
 }
 .percentgeval{
 	font-size: 14px;
-    margin-left: 4px;}
+	margin-left: 4px;
+	
+}
 .chartc3{
 	margin-top: 10px;
     float: left;

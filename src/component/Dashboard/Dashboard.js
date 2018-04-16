@@ -9,7 +9,10 @@ import _ from 'underscore';
 import Userinfo from './Userinfo';
 import Header from './Header';
 import axios from 'axios';
-import chartsData from "../../data"
+import chartsData from "../../data";
+import { NotificationContainer, NotificationManager } from 'react-notifications';
+import 'react-notifications/lib/notifications.css';
+
 
 
 class Dashboard extends Component {
@@ -17,7 +20,7 @@ class Dashboard extends Component {
     super(props);
     this.state = {
       data: MockData.stockData[0],
-      chartsData :{
+      chartsData: {
         data: {
           x: 'x',
           type: 'line',
@@ -28,12 +31,12 @@ class Dashboard extends Component {
           x: {
             type: 'timeseries',
             tick: {
-              format: '%Y-%m-%d'   
+              format: '%Y-%m-%d'
             }
           }
-        }  
+        }
       },
-      userStockData : MockData.userStockData[0],
+      userStockData: MockData.userStockData[0],
       exchangedata: MockData.exchangeData[0],
       phase1: [],
       phase2: []
@@ -50,7 +53,7 @@ class Dashboard extends Component {
     }.bind(this), 5000);
   }
   apiCall(message) {
-    console.log('message',message);
+    console.log('message', message);
 /*     let params = {
       "templateId": "5acdd6228a73ee12e45042de",
       "tenantId": "5acb31265da45d0ed80132fe",
@@ -64,25 +67,25 @@ class Dashboard extends Component {
         "transactionDate": "11-APR-2018"
       }
     } 
- */    axios.post(`api/notification/sms`, { 
-      
-        "templateId": "5acf37452293324eac63aedb",
-        "tenantId": "5acf35fa7774794cd9af3973",
-        "smsNotification": {
-          "toNumber": "9850076141",
-          "stockName": "MRF",
-          "quantity": "5",
-          "stockPrice": "394.99",
-          "exchangeName": "BSE",
-          "accountNumber": "E9XXX767",
-          "transactionDate": "11-APR-2018"
-        }
-       
-     })
+ */    axios.post(`api/notification/sms`, {
+
+      "templateId": "5acf37452293324eac63aedb",
+      "tenantId": "5acf35fa7774794cd9af3973",
+      "smsNotification": {
+        "toNumber": "9850076141",
+        "stockName": "MRF",
+        "quantity": "5",
+        "stockPrice": "394.99",
+        "exchangeName": "BSE",
+        "accountNumber": "E9XXX767",
+        "transactionDate": "11-APR-2018"
+      }
+
+    })
       .then(res => {
         console.log(res);
         console.log(res.data);
-    })
+      })
   }
   _setChartType(type) {
     let chartData = { ...this.state.chartsData };
@@ -94,11 +97,11 @@ class Dashboard extends Component {
     let stockData = [...this.state.data], chartData = { ...this.state.chartsData };
     stockData = MockData.stockData[randNumber];
     chartData.data.columns = chartsData[randNumber];
-    this.setState({ data: stockData, exchangedata : MockData.exchangeData[randNumber], chartsData : chartData});
+    this.setState({ data: stockData, exchangedata: MockData.exchangeData[randNumber], chartsData: chartData });
   }
   handleBuy(stock, quantity) {
     this.apiCall('Your order in process');
-    let randNumber =  Math.floor(Math.random() * (4 - 0 + 1)) + 0;
+    let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData1 = [...this.state.phase1], stockData2 = [...this.state.phase2], selectedStocks = { ...stock };
     selectedStocks.marketValue = stock.stockprize + Math.random();
     selectedStocks.holdingValue = selectedStocks.marketValue * quantity;
@@ -107,7 +110,7 @@ class Dashboard extends Component {
 
 
     setTimeout(function () {
-      this.setState({ phase1: stockData1, userStockData : MockData.userStockData[randNumber]});
+      this.setState({ phase1: stockData1, userStockData: MockData.userStockData[randNumber] });
       this.apiCall('Your order in phase-1 process ');
     }.bind(this), 3000);
 
@@ -117,7 +120,7 @@ class Dashboard extends Component {
       let selectedStocksPhase2 = { ...selectedStocks };
       selectedStocksPhase2.status = 'Order Placed';
       stockData2.push(selectedStocksPhase2);
-      this.setState({ phase2: stockData2, phase1 : stockData1});
+      this.setState({ phase2: stockData2, phase1: stockData1 });
       this.apiCall('Your order in phase-2 process ');
     }.bind(this), 6000);
   }
@@ -135,31 +138,46 @@ class Dashboard extends Component {
     });
     setTimeout(function () { this.setState({ phase2: filtered }); }.bind(this), 3000);
   }
-
+  // createNotification = (type) => {
+  //   return () => {
+  //     switch (type) {
+  //       case 'info':
+  //            NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
+  //         break;       
+  //     }
+  //   };
+  // };
   render() {
 
     return (
       <div className="col-md-12 demo-div heading-section">
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-          <Header exchange={this.state.exchangedata[0]} exchangeOldData ={MockData.exchangeData[0][0]}/>
+          <Header exchange={this.state.exchangedata[0]} exchangeOldData={MockData.exchangeData[0][0]} />
         </div>
-
-
+        {/* <hr />
+        <hr />
+        <hr />
+        <hr />    
+        <button className='btn btn-info'
+          onClick={this.createNotification('info')}>Info
+        </button>
+        <hr />      
+        <NotificationContainer /> */}
 
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-              <Stocktable originalData={MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
-              <div className="margin-b-20">
+            <Stocktable originalData={MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
+            <div className="margin-b-20">
               <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
-              </div>
-              <div className="margin-b-60">
-                <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
-              </div>
+            </div>
+            <div className="margin-b-60">
+              <PhaseTwo data={this.state.phase2} handleCancelPhase2Order={this.handleCancelPhase2Order} />
+            </div>
           </div>
         </div>
         <div className=" col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          <div> <Userinfo userStockData={this.state.userStockData} userStockOldData = {MockData.userStockData[0]}/> </div>
-          <div><Chart chartsData={this.state.chartsData} _setChartType = {this._setChartType}/></div>
+          <div> <Userinfo userStockData={this.state.userStockData} userStockOldData={MockData.userStockData[0]} /> </div>
+          <div><Chart chartsData={this.state.chartsData} _setChartType={this._setChartType} /></div>
         </div>
 
 
