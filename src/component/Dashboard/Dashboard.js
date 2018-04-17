@@ -12,13 +12,14 @@ import axios from 'axios';
 import chartsData from "../../data";
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-
+import { subscribeToMessanger} from '../../api';
 
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      timestamp: 'no timestamp yet',
       data: MockData.stockData[0],
       chartsData: {
         data: {
@@ -51,6 +52,7 @@ class Dashboard extends Component {
     setInterval(function () {
       this.stockPriceVary();
     }.bind(this), 5000);
+    subscribeToMessanger((err, message) => NotificationManager.success(message.message));    
   }
   apiCall(message) {
     console.log('message', message);
@@ -166,6 +168,8 @@ class Dashboard extends Component {
 
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+          This is the timer value: {this.state.timestamp}
+          <NotificationContainer />
             <Stocktable originalData={MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
             <div className="margin-b-20">
               <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />
