@@ -36,6 +36,9 @@ body{
   	font-weight: 200;
  	margin-top: 0;
 }
+.Header .navbar a{
+	color: #fff !important;
+}
 
 .header div span{
 	color: #5379fa !important;
