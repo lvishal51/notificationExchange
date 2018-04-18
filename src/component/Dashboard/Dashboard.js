@@ -52,7 +52,6 @@ class Dashboard extends Component {
     setInterval(function () {
       this.stockPriceVary();
     }.bind(this), 5000);
-    subscribeToMessanger((err, message) => NotificationManager.success(message.message));    
   }
   apiCall(message) {
     console.log('message', message);
@@ -140,15 +139,6 @@ class Dashboard extends Component {
     });
     setTimeout(function () { this.setState({ phase2: filtered }); }.bind(this), 3000);
   }
-  // createNotification = (type) => {
-  //   return () => {
-  //     switch (type) {
-  //       case 'info':
-  //            NotificationManager.warning('Warning message', 'Close after 3000ms', 3000);
-  //         break;       
-  //     }
-  //   };
-  // };
   render() {
 
     return (
@@ -156,16 +146,6 @@ class Dashboard extends Component {
         <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12">
           <Header exchange={this.state.exchangedata[0]} exchangeOldData={MockData.exchangeData[0][0]} />
         </div>
-        {/* <hr />
-        <hr />
-        <hr />
-        <hr />    
-        <button className='btn btn-info'
-          onClick={this.createNotification('info')}>Info
-        </button>
-        <hr />      
-        <NotificationContainer /> */}
-
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
           This is the timer value: {this.state.timestamp}
