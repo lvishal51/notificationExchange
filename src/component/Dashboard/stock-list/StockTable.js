@@ -52,7 +52,6 @@ class Stocktable extends Component {
           <TableHeaderColumn isKey tdClassName={"redcolor"} dataField='id'>ID</TableHeaderColumn>
           <TableHeaderColumn dataField='name'>Name</TableHeaderColumn>
           <TableHeaderColumn dataField='stockprize' columnClassName={ this.columnClassNameFormat }>Price </TableHeaderColumn>
-          <TableHeaderColumn dataField='chart' dataFormat={this.openChart}> Chart</TableHeaderColumn>
           <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForBuy}>Buy</TableHeaderColumn>
           <TableHeaderColumn dataField='' dataAlign="center" dataFormat={this.cellButtonForSell}>Sell</TableHeaderColumn>
         </BootstrapTable>

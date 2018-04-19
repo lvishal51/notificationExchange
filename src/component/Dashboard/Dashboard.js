@@ -95,15 +95,15 @@ class Dashboard extends Component {
   }
   stockPriceVary() {
     let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
-    let stockData = [...this.state.data], chartData = { ...this.state.chartsData };
+    let stockData = [...this.state.data];
     stockData = MockData.stockData[randNumber];
-    chartData.data.columns = chartsData[randNumber];
-    this.setState({ data: stockData, exchangedata: MockData.exchangeData[randNumber], chartsData: chartData });
+    this.setState({ data: stockData, exchangedata: MockData.exchangeData[randNumber]});
   }
   handleBuy(stock, quantity) {
     this.apiCall('Your order in process');
     let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
-    let stockData1 = [...this.state.phase1], stockData2 = [...this.state.phase2], selectedStocks = { ...stock };
+    let stockData1 = [...this.state.phase1], stockData2 = [...this.state.phase2], selectedStocks = { ...stock }, chartData = { ...this.state.chartsData };
+    chartData.data.columns = chartsData[stock.id -1];
     selectedStocks.marketValue = stock.stockprize + Math.random();
     selectedStocks.holdingValue = selectedStocks.marketValue * quantity;
     selectedStocks.status = 'In Progress';
@@ -111,7 +111,7 @@ class Dashboard extends Component {
 
 
     setTimeout(function () {
-      this.setState({ phase1: stockData1, userStockData: MockData.userStockData[randNumber] });
+      this.setState({ phase1: stockData1, userStockData: MockData.userStockData[randNumber], chartsData: chartData });
       this.apiCall('Your order in phase-1 process ');
     }.bind(this), 3000);
 
