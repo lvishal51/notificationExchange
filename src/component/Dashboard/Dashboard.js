@@ -10,16 +10,14 @@ import Userinfo from './Userinfo';
 import Header from './Header';
 import axios from 'axios';
 import chartsData from "../../data";
+import backendApi from "../../constant/constant"
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import 'react-notifications/lib/notifications.css';
-import { subscribeToMessanger} from '../../api';
-
 
 class Dashboard extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      timestamp: 'no timestamp yet',
       data: MockData.stockData[0],
       chartsData: {
         data: {
@@ -46,61 +44,70 @@ class Dashboard extends Component {
     this.handleCancelPhase1Order = this.handleCancelPhase1Order.bind(this);
     this.handleCancelPhase2Order = this.handleCancelPhase2Order.bind(this);
     this.stockPriceVary = this.stockPriceVary.bind(this);
-    this.apiCall = this.apiCall.bind(this);
+    this.apiSendNotification = this.apiSendNotification.bind(this);
+    this.apiPullNotification = this.apiPullNotification.bind(this);
     this._setChartType = this._setChartType.bind(this);
 
     setInterval(function () {
       this.stockPriceVary();
     }.bind(this), 5000);
   }
-  apiCall(message) {
-    console.log('message', message);
-/*     let params = {
-      "templateId": "5acdd6228a73ee12e45042de",
-      "tenantId": "5acb31265da45d0ed80132fe",
-      "smsNotification": {
-        "toNumber": "9850076141",
-        "stockName": "MRF",
-        "quantity": "5",
-        "stockPrice": "394.99",
-        "exchangeName": "BSE",
-        "accountNumber": "E9XXX767",
-        "transactionDate": "11-APR-2018"
-      }
-    } 
- */    axios.post(`api/notification/sms`, {
-
-      "templateId": "5acf37452293324eac63aedb",
-      "tenantId": "5acf35fa7774794cd9af3973",
-      "smsNotification": {
-        "toNumber": "9850076141",
-        "stockName": "MRF",
-        "quantity": "5",
-        "stockPrice": "394.99",
-        "exchangeName": "BSE",
-        "accountNumber": "E9XXX767",
-        "transactionDate": "11-APR-2018"
-      }
-
+  
+  apiPullNotification() {
+    let apiData = {...backendApi.pullNotification};
+    console.log('apiPullNotification',apiData);
+    axios({
+      url: 'api/notification',
+      method: 'get',
+      headers: apiData.headers
+   })
+    .then(res => {
+      NotificationManager.info("Kotak Mahindra Bank",res.message);
+      console.log(res);
     })
+    .catch(function (error) {
+      console.log(error);
+    });    
+  }
+  
+  apiSendNotification(stock, quantity) {
+    let apiData = {...backendApi.sendNotification};
+    console.log('apiSendNotification',apiData);
+    apiData.sendNotification.smsNotification.body.stockName = stock.name;
+    apiData.sendNotification.smsNotification.body.quantity = stock.quantity;
+    apiData.sendNotification.smsNotification.body.stockPrice = stock.stockprize;
+    
+    apiData.sendNotification.emailNotification.body.stockName = stock.name;
+    apiData.sendNotification.emailNotification.body.quantity = stock.quantity;
+    apiData.sendNotification.emailNotification.body.stockPrice = stock.stockprize;
+    
+    console.log('stock', stock);
+     axios.post(`api/notification/send`, {
+        apiData
+	    })
       .then(res => {
         console.log(res);
         console.log(res.data);
       })
+      .catch(function (error) {
+        console.log(error);
+      });
   }
   _setChartType(type) {
     let chartData = { ...this.state.chartsData };
     chartData.data.type = type;
     this.setState({ chartsData: chartData });
   }
+  //stockPriceVary() : Change data after some time interval and call pullNotification api
   stockPriceVary() {
     let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData = [...this.state.data];
+    this.apiPullNotification(); //Pull notifications from server
     stockData = MockData.stockData[randNumber];
     this.setState({ data: stockData, exchangedata: MockData.exchangeData[randNumber]});
   }
   handleBuy(stock, quantity) {
-    this.apiCall('Your order in process');
+    this.apiSendNotification(stock, quantity);
     let randNumber = Math.floor(Math.random() * (4 - 0 + 1)) + 0;
     let stockData1 = [...this.state.phase1], stockData2 = [...this.state.phase2], selectedStocks = { ...stock }, chartData = { ...this.state.chartsData };
     chartData.data.columns = chartsData[stock.id -1];
@@ -112,7 +119,6 @@ class Dashboard extends Component {
 
     setTimeout(function () {
       this.setState({ phase1: stockData1, userStockData: MockData.userStockData[randNumber], chartsData: chartData });
-      this.apiCall('Your order in phase-1 process ');
     }.bind(this), 3000);
 
     setTimeout(function () {
@@ -122,7 +128,6 @@ class Dashboard extends Component {
       selectedStocksPhase2.status = 'Order Placed';
       stockData2.push(selectedStocksPhase2);
       this.setState({ phase2: stockData2, phase1: stockData1 });
-      this.apiCall('Your order in phase-2 process ');
     }.bind(this), 6000);
   }
 
@@ -148,8 +153,7 @@ class Dashboard extends Component {
         </div>
         <div className="margin-t-60">
           <div className="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-          This is the timer value: {this.state.timestamp}
-          <NotificationContainer />
+            <NotificationContainer />
             <Stocktable originalData={MockData.stockData[0]} data={this.state.data} handleBuy={this.handleBuy} />
             <div className="margin-b-20">
               <PhaseOne data={this.state.phase1} handleCancelPhase1Order={this.handleCancelPhase1Order} />

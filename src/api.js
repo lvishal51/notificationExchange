@@ -4,8 +4,8 @@ import 'react-notifications/lib/notifications.css';
 
 const  socket = openSocket('http://localhost:8000');
 function subscribeToMessanger(cb) {
-  socket.on('timer', message => cb(null, message));
-  socket.emit('subscribeToMessanger', 5000);
+  //socket.on('timer', message => cb(null, message));
+  //socket.emit('subscribeToMessanger', 5000);
 }
 function displayMessage(messageObj) {
     switch (messageObj.type) {
