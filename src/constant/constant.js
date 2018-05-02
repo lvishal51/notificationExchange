@@ -1,8 +1,8 @@
 let sendNotification = 		
 {
     "sendNotification":{
-        "templateId": "5ad5e666793b9d200c9aeaf7",
-        "accessKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZDQ5ODNlY2ZiNzYyMmM2MDVjOWI0YSIsInVzZXJuYW1lIjoibW90aWxhbC5vc3dhbEB0cmFkaW5nLmNvbSIsInRlbmFudElkIjoiNWFkNDk4M2VjZmI3NjIyYzYwNWM5YjRiIiwiaWF0IjoxNTIzODgyMDQ2fQ.PvyGrt74Hwo8g5NgLsHacGX1j_A0NIIP8qdhCJYCA7o",
+        "templateId": "5ae16a871a95a21270e9372a",
+        "accessKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZTA1Y2Y4Y2ZjMGM4MTk1NDVjNzUwNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ0ZW5hbnRJZCI6IjVhZTA1Y2Y4Y2ZjMGM4MTk1NDVjNzUwOCIsImlhdCI6MTUyNDY1MzMwNH0.8vWkd-pV6o6_RE4HnAGfduoOlDHK8dkHO2q981nW2hY",
         "smsNotification": {
             "header":{
                 "toNumber": "9766810811"
@@ -19,7 +19,7 @@ let sendNotification =
         "emailNotification": {
             "header":{
                 "fromEmailAddress": "motilal.oswal@trading.com",
-                "toEmailAddress": "rahul.gourshettiwar@globant.com",
+                "toEmailAddress": "vishal.lohakare@globant.com",
                 "subject": {
                     "accountNumber": "E9XXX767"
                 }
@@ -32,6 +32,9 @@ let sendNotification =
                 "accountNumber": "E9XXX767",
                 "transactionDate": "11-APR-2018"
             }
+        },
+        "webTemplate": {
+            "message" : ""
         }
     }
 }
@@ -39,7 +42,7 @@ let sendNotification =
 let pullNotification =
 { 
     headers: {
-        "accessKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZDQ5ODNlY2ZiNzYyMmM2MDVjOWI0YSIsInVzZXJuYW1lIjoibW90aWxhbC5vc3dhbEB0cmFkaW5nLmNvbSIsInRlbmFudElkIjoiNWFkNDk4M2VjZmI3NjIyYzYwNWM5YjRiIiwiaWF0IjoxNTIzODgyMDQ2fQ.PvyGrt74Hwo8g5NgLsHacGX1j_A0NIIP8qdhCJYCA7o"
+        "accessKey": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVhZTA1Y2Y4Y2ZjMGM4MTk1NDVjNzUwNyIsInVzZXJuYW1lIjoiYWRtaW4iLCJ0ZW5hbnRJZCI6IjVhZTA1Y2Y4Y2ZjMGM4MTk1NDVjNzUwOCIsImlhdCI6MTUyNDY1MzMwNH0.8vWkd-pV6o6_RE4HnAGfduoOlDHK8dkHO2q981nW2hY"
     }
 };
 export default {sendNotification,pullNotification};

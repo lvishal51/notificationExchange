@@ -55,15 +55,14 @@ class Dashboard extends Component {
   
   apiPullNotification() {
     let apiData = {...backendApi.pullNotification};
-    console.log('apiPullNotification',apiData);
     axios({
       url: 'api/notification',
       method: 'get',
       headers: apiData.headers
    })
     .then(res => {
-      NotificationManager.info("Kotak Mahindra Bank",res.message);
-      console.log(res);
+      NotificationManager.info("Stock Market Information",res.data[0].message);
+      console.log(res.data);
     })
     .catch(function (error) {
       console.log(error);
@@ -81,9 +80,10 @@ class Dashboard extends Component {
     apiData.sendNotification.emailNotification.body.quantity = stock.quantity;
     apiData.sendNotification.emailNotification.body.stockPrice = stock.stockprize;
     
+    apiData.sendNotification.webTemplate.message = "Your order for "+stock.name+"with total quantity"+stock.quantity+ "total amount"+stock.stockprize;
     console.log('stock', stock);
      axios.post(`api/notification/send`, {
-        apiData
+        sendNotification: apiData.sendNotification
 	    })
       .then(res => {
         console.log(res);
